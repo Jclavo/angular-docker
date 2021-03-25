@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  angular-myappname:
+    image: angular-myappname
+    container_name: myappname-frontend
+    build: .
+    ports:
+      - 4200:4200
+    volumes:
+      - ./app:/usr/app
+
+    command: ash -c "npm install -y && ng serve --host 0.0.0.0" # For DEV 
